@@ -57,16 +57,21 @@ export default function EcosystemSection() {
             className="absolute w-[280px] h-[280px]"
           >
             {ecosystemItems.slice(0, 6).map((item, i) => {
-              const angle = (i / 6) * 360;
-              const rad = (angle * Math.PI) / 180;
-              const x = Math.cos(rad) * 130;
-              const y = Math.sin(rad) * 130;
+           const radius = 130;
+
+// Angle in radians
+const angle = (i / 6) * (2 * Math.PI);
+
+const x = Math.round(Math.cos(angle) * radius);
+const y = Math.round(Math.sin(angle) * radius);
               return (
                 <motion.div
                   key={item.name}
-                  style={{ position: "absolute", left: "50%", top: "50%", transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))` }}
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                style={{
+  position: "absolute",
+  left: "50%",
+  top: "50%",
+  transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`, }}
                 >
                   <div className="w-10 h-10 glass rounded-full flex items-center justify-center border border-white/10">
                     <item.icon size={16} className="text-brand-green" />

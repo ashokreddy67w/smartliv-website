@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navItems = [
   { label: "Products", href: "#/products" },
@@ -37,18 +38,11 @@ export default function Navigation() {
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 h-16 md:h-20 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-7 h-7 rounded-md bg-brand-green flex items-center justify-center">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 2L14 5.5V10.5L8 14L2 10.5V5.5L8 2Z" fill="white" fillOpacity="0.9" />
-                <circle cx="8" cy="8" r="2" fill="white" />
-              </svg>
+          <a href="/" className="flex items-center gap-3 group">
+            <div className="relative">
+             <Image src="/images/newlogo4.png" alt="SmartLiv Home Solutions" width={180} height={54} priority className="h-30 w-auto transition-opacity duration-300 group-hover:opacity-90" />
             </div>
-            <span className="text-white font-medium text-lg tracking-tight">
-              Smart<span className="text-brand-green">Liv</span>
-            </span>
           </a>
-
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Reveal, StaggerChildren, StaggerItem } from "../ui/Motion";
@@ -53,9 +53,50 @@ const colors = [
 export default function ColourSection() {
   const [selected, setSelected] = useState(0);
   const [showCollection, setShowCollection] = useState(true);
+  const sectionRef = useRef<HTMLElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  const handleColorSelect = (index: number) => {
+    setSelected(index);
+    setShowCollection(false);
+    
+    // Scroll to image on mobile after selection
+    setTimeout(() => {
+      if (window.innerWidth < 1024 && imageRef.current) {
+        const headerHeight = 80; // Approximate header height
+        const rect = imageRef.current.getBoundingClientRect();
+        const scrollY = window.scrollY;
+        const targetPosition = rect.top + scrollY - headerHeight - 20;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  };
+
+  const handleBackToCollection = () => {
+    setShowCollection(true);
+    
+    // Scroll back to section header on mobile
+    setTimeout(() => {
+      if (window.innerWidth < 1024 && sectionRef.current) {
+        const headerHeight = 80;
+        const rect = sectionRef.current.getBoundingClientRect();
+        const scrollY = window.scrollY;
+        const targetPosition = rect.top + scrollY - headerHeight - 20;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  };
 
   return (
-    <section className="bg-black py-32 md:py-40">
+    <section ref={sectionRef} className="bg-black py-32 md:py-40">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Header */}
         <div className="mb-16">
@@ -78,17 +119,14 @@ export default function ColourSection() {
         </div>
 
         {/* Changed grid to 1:2 ratio for larger image */}
-        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-16 items-start">
           {/* Color swatches - slightly smaller column */}
           <div className="max-w-[420px]">
             <StaggerChildren staggerDelay={0.07}>
               {colors.map((color, i) => (
                 <StaggerItem key={color.name}>
                   <motion.button
-                    onClick={() => {
-                      setSelected(i);
-                      setShowCollection(false);
-                    }}
+                    onClick={() => handleColorSelect(i)}
                     whileHover={{ x: 6 }}
                     className={`w-full flex items-center gap-5 p-4 rounded-2xl transition-all duration-300 text-left mb-2 ${
                       selected === i && !showCollection ? "glass-green" : "hover:glass"
@@ -134,10 +172,17 @@ export default function ColourSection() {
                 <a href="#enquire" className="text-brand-green hover:underline">Enquire now →</a>
               </p>
             </Reveal>
+
+            {/* Mobile indicator - shows on small screens */}
+            <div className="lg:hidden mt-8 text-center">
+              <p className="text-white/20 text-xs font-light">
+                👆 Tap a colour to preview
+              </p>
+            </div>
           </div>
 
           {/* Preview image - now larger with increased aspect ratio */}
-          <div className="relative">
+          <div ref={imageRef} className="relative">
             <AnimatePresence mode="wait">
               {showCollection ? (
                 // Show collection image first
@@ -250,7 +295,7 @@ export default function ColourSection() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
-                onClick={() => setShowCollection(true)}
+                onClick={handleBackToCollection}
                 className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 text-white/60 text-xs font-light hover:text-white hover:border-white/20 transition-all"
               >
                 ← Back to Collection

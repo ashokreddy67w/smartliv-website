@@ -1,0 +1,16 @@
+{
+  "name": "SmartLiv",
+  "short_name": "SmartLiv",
+  "description": "Premium Smart Home Automation",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#5EA43A",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
