@@ -1,7 +1,6 @@
 "use client";
-
-import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { motion, type Variants } from "framer-motion";
 
 interface RevealProps {
   children: ReactNode;
@@ -12,7 +11,7 @@ interface RevealProps {
 }
 
 export function Reveal({ children, delay = 0, direction = "up", className = "", once = true }: RevealProps) {
-  const variants = {
+const variants: Variants = {
     hidden: {
       opacity: 0,
       y: direction === "up" ? 40 : 0,
@@ -25,7 +24,7 @@ export function Reveal({ children, delay = 0, direction = "up", className = "", 
       transition: {
         duration: 0.7,
         delay,
-        ease: [0.22, 1, 0.36, 1],
+       ease: [0.22, 1, 0.36, 1] as const,
       },
     },
   };
