@@ -6,48 +6,66 @@ import Image from "next/image";
 import { Reveal, StaggerChildren, StaggerItem } from "../ui/Motion";
 
 const colors = [
-  { 
-    name: "Obsidian Black", 
-    hex: "#0D0D0D", 
-    border: "#333", 
-    image: "/images/colours/Black.png",
-    desc: "The purest expression of the SmartLiv form. Absolute black that commands any room." 
+  {
+    name: "Obsidian Black",
+    hex: "#0D0D0D",
+    border: "#333",
+    image: "/images/colours-webp/Black.webp",
+    desc: "Elegant black glass finish for luxury interiors."
   },
-  { 
-    name: "Polar White", 
-    hex: "#F5F5F5", 
-    border: "#DDD", 
-    image: "/images/colours/white.png",
-    desc: "Seamless integration with white interiors. Disappears into the wall, by design." 
+  {
+    name: "Polar White",
+    hex: "#F5F5F5",
+    border: "#DDD",
+    image: "/images/colours-webp/white.webp",
+    desc: "Minimalist white finish for modern homes."
   },
-  { 
-    name: "Titanium Grey", 
-    hex: "#7A7A7A", 
-    border: "#666", 
-    image: "/images/colours/Titanium.png",
-    desc: "Industrial warmth. Pairs with concrete, stone, and brushed metal finishes." 
+  {
+    name: "Titanium Grey",
+    hex: "#7A7A7A",
+    border: "#666",
+    image: "/images/colours-webp/Titanium.webp",
+    desc: "Contemporary metallic finish for premium spaces."
   },
-  { 
-    name: "Champagne Gold", 
-    hex: "#C8A96A", 
-    border: "#B8954A", 
-    image: "/images/colours/gold.png",
-    desc: "For interiors that celebrate opulence. A warm accent that elevates every room." 
+  {
+    name: "Champagne Gold",
+    hex: "#C8A96A",
+    border: "#B8954A",
+    image: "/images/colours-webp/gold.webp",
+    desc: "Warm luxury finish for designer interiors."
   },
-  { 
-    name: "Sage Green", 
-    hex: "#5EA43A", 
-    border: "#4A8A30", 
-    image: "/images/colours/green.png",
-    desc: "SmartLiv's signature finish. A nod to nature within a precision-engineered product." 
+  {
+    name: "Sage Green",
+    hex: "#5EA43A",
+    border: "#4A8A30",
+    image: "/images/colours-webp/green.webp",
+    desc: "Nature-inspired finish for sophisticated living."
   },
-  { 
-    name: "Midnight Blue", 
-    hex: "#1C2B4A", 
-    border: "#2A3D66", 
-    image: "/images/colours/blue.png",
-    desc: "Deep and contemplative. A refined choice for libraries, studies, and master bedrooms." 
+  {
+    name: "Midnight Blue",
+    hex: "#1C2B4A",
+    border: "#2A3D66",
+    image: "/images/colours-webp/blue.webp",
+    desc: "Deep premium blue for bold contemporary homes."
   },
+];
+
+const features = [
+  "Premium Tempered Glass",
+  "Scratch Resistant Surface",
+  "Fade Resistant Finish",
+  "Easy to Clean",
+  "Designed for Everyday Use",
+  "Made for Modern Indian Homes"
+];
+
+const perfectFor = [
+  "Luxury Homes",
+  "Villas",
+  "Apartments",
+  "Hotels",
+  "Offices",
+  "Commercial Spaces"
 ];
 
 export default function ColourSection() {
@@ -63,7 +81,7 @@ export default function ColourSection() {
     // Scroll to image on mobile after selection
     setTimeout(() => {
       if (window.innerWidth < 1024 && imageRef.current) {
-        const headerHeight = 80; // Approximate header height
+        const headerHeight = 80;
         const rect = imageRef.current.getBoundingClientRect();
         const scrollY = window.scrollY;
         const targetPosition = rect.top + scrollY - headerHeight - 20;
@@ -101,26 +119,25 @@ export default function ColourSection() {
         {/* Header */}
         <div className="mb-16">
           <Reveal>
-            <p className="text-brand-green text-sm tracking-widest uppercase font-light mb-4">Colour Collection</p>
+            <p className="text-brand-green text-sm tracking-widest uppercase font-light mb-4">
+              PREMIUM SMART SWITCH FINISHES
+            </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="text-headline font-thin text-white mb-4">
-              Vibrant Colours.{" "}
-              <span className="text-white/35">Zero Compromise.</span>
+              Luxury Smart Switch Finishes.{" "}
+              <span className="text-white/35">Designed for Every Interior.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-white/40 text-lg font-light max-w-2xl">
-              Six precision-finished colourways, each developed over 18 months 
-              of material research. Matched to Pantone standards. 
-              UV-stable for 25 years.
+              SmartLiv premium smart touch switches are available in carefully crafted finishes that complement modern homes, luxury villas, apartments, offices, hotels, and commercial interiors. Every finish combines timeless design, premium materials, and intelligent home automation to create a seamless living experience.
             </p>
           </Reveal>
         </div>
 
-        {/* Changed grid to 1:2 ratio for larger image */}
         <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-16 items-start">
-          {/* Color swatches - slightly smaller column */}
+          {/* Color swatches */}
           <div className="max-w-[420px]">
             <StaggerChildren staggerDelay={0.07}>
               {colors.map((color, i) => (
@@ -166,6 +183,67 @@ export default function ColourSection() {
               ))}
             </StaggerChildren>
 
+            {/* Material Features */}
+            <div className="mt-8 ml-4">
+              <Reveal delay={0.4}>
+                <p className="text-white/20 text-xs font-light uppercase tracking-wider mb-4">
+                  Premium Material Features
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {features.map((feature, index) => (
+                    <motion.div
+                      key={feature}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 + index * 0.05 }}
+                      className="flex items-center gap-2"
+                    >
+                      <span className="text-brand-green text-xs">✓</span>
+                      <span className="text-white/40 text-xs font-light">{feature}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Perfect For */}
+            <div className="mt-8 ml-4">
+              <Reveal delay={0.6}>
+                <p className="text-white/20 text-xs font-light uppercase tracking-wider mb-4">
+                  Perfect For
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {perfectFor.map((item, index) => (
+                    <motion.span
+                      key={item}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.7 + index * 0.05 }}
+                      className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white/40 text-xs font-light"
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+
+            <Reveal delay={0.8}>
+              <motion.a
+                href="#enquire"
+                whileHover={{ x: 4 }}
+                className="inline-flex items-center gap-2 text-brand-green text-sm font-light mt-8 ml-4 hover:gap-3 transition-all"
+              >
+                Explore Premium Finishes →
+              </motion.a>
+            </Reveal>
+
+            <Reveal delay={0.9}>
+              <p className="text-white/20 text-xs font-light mt-4 ml-4 max-w-sm">
+                Available in carefully selected premium finishes designed to complement every modern interior. Custom finish options may be available for large commercial and builder projects.
+              </p>
+            </Reveal>
+
             <Reveal delay={0.5}>
               <p className="text-white/20 text-xs font-light mt-6 ml-4">
                 Custom RAL colours available for orders of 50+ units.{" "}
@@ -181,11 +259,10 @@ export default function ColourSection() {
             </div>
           </div>
 
-          {/* Preview image - now larger with increased aspect ratio */}
+          {/* Preview image - keeping 4:3 aspect ratio */}
           <div ref={imageRef} className="relative">
             <AnimatePresence mode="wait">
               {showCollection ? (
-                // Show collection image first
                 <motion.div
                   key="collection"
                   initial={{ opacity: 0, scale: 0.96 }}
@@ -195,8 +272,8 @@ export default function ColourSection() {
                   className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]"
                 >
                   <Image
-                    src="/images/colours/smartliv-colour-collection.png"
-                    alt="SmartLiv Colour Collection - Premium Finish Options"
+                    src="/images/colours-webp/smartliv-colour-collection.webp"
+                    alt="SmartLiv premium smart touch switches available in black, white, gold, grey, green and blue luxury glass finishes."
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 60vw"
@@ -231,7 +308,6 @@ export default function ColourSection() {
                   </motion.div>
                 </motion.div>
               ) : (
-                // Show selected colour preview - now with larger aspect ratio
                 <motion.div
                   key={selected}
                   initial={{ opacity: 0, scale: 0.96 }}
@@ -245,7 +321,7 @@ export default function ColourSection() {
                 >
                   <Image
                     src={colors[selected].image}
-                    alt={`${colors[selected].name} Finish - SmartLiv`}
+                    alt={`${colors[selected].name} finish - SmartLiv premium smart touch switches for luxury home automation in India`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 60vw"
@@ -266,7 +342,7 @@ export default function ColourSection() {
                     }}
                   />
                   
-                  {/* Color swatch overlay - made larger */}
+                  {/* Color swatch overlay */}
                   <div
                     className="absolute bottom-8 right-8 w-20 h-20 rounded-full border-2 border-white/20 shadow-xl"
                     style={{

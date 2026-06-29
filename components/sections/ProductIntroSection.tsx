@@ -11,6 +11,8 @@ const features = [
   "Child-lock & gang protection built in",
   "Zero-flicker dimming technology",
   "Works with Alexa, Google & Siri",
+  "Wi-Fi & Bluetooth Connectivity",
+  "Mobile App Control from Anywhere"
 ];
 
 export default function ProductIntroSection() {
@@ -20,7 +22,7 @@ export default function ProductIntroSection() {
         {/* Section label */}
         <Reveal>
           <p className="text-brand-green text-sm tracking-widest uppercase font-light mb-6">
-            Crafted for Homes That Appreciate Finer Things
+            PREMIUM SMART TOUCH SWITCHES FOR MODERN HOMES
           </p>
         </Reveal>
 
@@ -29,16 +31,13 @@ export default function ProductIntroSection() {
           <div>
             <Reveal delay={0.1}>
               <h2 className="text-headline font-thin text-white mb-8">
-                Not just a switch.{" "}
-                <span className="text-white/40">A statement of intent.</span>
+               Luxury Smart Touch Switches.{" "}
+                <span className="text-white/40">Built for Modern Home Automation.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-white/50 text-lg font-light leading-relaxed mb-8">
-                SmartLiv switches replace every standard fitting in your home with
-                precision-engineered panels that respond to the lightest touch.
-                Built from aircraft-grade aluminium and UV-stable polycarbonate,
-                they're designed to outlast the home itself.
+               SmartLiv Smart Touch Switches combine premium design with advanced home automation. Control lights, fans, curtains, appliances, and scenes from elegant glass touch panels, the SmartLiv mobile app, or voice assistants like Alexa, Google Assistant, and Siri. Designed for luxury homes, villas, apartments, and commercial spaces, SmartLiv delivers intelligent living with seamless control.
               </p>
             </Reveal>
             <Reveal delay={0.25}>
@@ -86,7 +85,7 @@ export default function ProductIntroSection() {
               {/* Main Image Container */}
               <div className="relative aspect-[3/4] w-full rounded-3xl overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]">
                 <Image
-                  src="/images/home-automation/smart-switch-premium.jpg"
+                  src="/images/home-automation/smart-switch-premium.webp"
                   alt="SmartLiv Switch Panel - Premium Smart Home Control"
                   fill
                   className="object-cover"

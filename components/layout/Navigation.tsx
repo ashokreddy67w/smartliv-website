@@ -5,13 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
+
 const navItems = [
-  { label: "Products", href: "#/products" },
-  { label: "Features", href: "#/features" },
-  { label: "App", href: "#/app" },
-  { label: "Design", href: "#/design" },
-  { label: "Compare", href: "#/compare" },
-  { label: "FAQ", href: "#/faq" },
+  { label: "Products", href: "/products" },
+  { label: "Features", href: "/features" },
+  { label: "App", href: "/app" },
+  { label: "Design", href: "/design" },
+  { label: "Compare", href: "/compare" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Navigation() {
@@ -40,7 +41,7 @@ export default function Navigation() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
             <div className="relative">
-             <Image src="/images/newlogo4.png" alt="SmartLiv Home Solutions" width={180} height={54} priority className="h-30 w-auto transition-opacity duration-300 group-hover:opacity-90" />
+             <Image src="/newlogo.png" alt="SmartLiv Home Solutions" width={180} height={54} priority className="h-30 w-auto transition-opacity duration-300 group-hover:opacity-90" />
             </div>
           </a>
           {/* Desktop Nav */}

@@ -28,17 +28,17 @@ export default function AppSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="text-headline font-thin text-white mb-6">
-              Your home intelligence.
+             Control Your Smart Home.
+From Anywhere.
               <br />
-              <span className="text-white/35">In your pocket.</span>
+              <span className="text-white/35">Everything you need.
+One intelligent app.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-white/40 text-lg font-light max-w-xl mx-auto">
-              The SmartLiv app gives you complete control over your home — 
-              beautifully designed for iOS and Android.
-            </p>
-          </Reveal>
+            The SmartLiv mobile app lets you control smart touch switches, lighting, fans, curtains, appliances, security, and automation scenes from anywhere. Available for Android and iPhone, it provides real-time control, schedules, voice assistant integration, and instant notifications to keep your home connected wherever you are.
+          </p></Reveal>
         </div>
 
         {/* Split layout */}
@@ -58,8 +58,8 @@ export default function AppSection() {
             <div className="relative w-[260px] md:w-[300px]">
              <div className="relative aspect-[9/19.5] w-full overflow-hidden rounded-[36px] border border-white/8 shadow-2xl shadow-brand-green/10 bg-black">
   <Image
-    src="/images/app/smartliv-app-screen.png"
-    alt="SmartLiv App"
+src="/images/app/smartliv-app-screen.webp"
+    alt="CONTROL YOUR SMART HOME"
     fill
     priority
     className="object-cover"

@@ -6,16 +6,19 @@ import { Reveal } from "../ui/Motion";
 import Image from "next/image";
 
 const comparisonRows = [
-  { feature: "Capacitive Touch Control", smartliv: true, traditional: false },
-  { feature: "Voice Assistant Integration", smartliv: true, traditional: false },
-  { feature: "Remote Control via App", smartliv: true, traditional: false },
+  { feature: "Premium Glass Touch Panel", smartliv: true, traditional: false },
+  { feature: "Capacitive Multi-Touch Control", smartliv: true, traditional: false },
+  { feature: "Mobile App Control", smartliv: true, traditional: false },
+  { feature: "Remote Access from Anywhere", smartliv: true, traditional: false },
+  { feature: "Voice Control (Alexa & Google Assistant)", smartliv: true, traditional: false },
   { feature: "Scene & Schedule Automation", smartliv: true, traditional: false },
-  { feature: "Energy Monitoring Dashboard", smartliv: true, traditional: false },
-  { feature: "No Neutral Wire Required", smartliv: true, traditional: false },
-  { feature: "Child Lock & Protection", smartliv: true, traditional: false },
-  { feature: "Customisable LED Backlight", smartliv: true, traditional: false },
-  { feature: "OTA Firmware Updates", smartliv: true, traditional: false },
-  { feature: "10-Year Warranty", smartliv: true, traditional: false },
+  { feature: "Smart Lighting & Fan Control", smartliv: true, traditional: false },
+  { feature: "Curtain & Appliance Automation", smartliv: true, traditional: false },
+  { feature: "Child Lock & Safety Protection", smartliv: true, traditional: false },
+  { feature: "Customizable LED Backlight", smartliv: true, traditional: false },
+  { feature: "Energy Monitoring", smartliv: true, traditional: false },
+  { feature: "Over-the-Air (OTA) Updates", smartliv: true, traditional: false },
+  { feature: "Premium Modular Design", smartliv: true, traditional: false },
 ];
 
 export default function ComparisonSection() {
@@ -33,13 +36,14 @@ export default function ComparisonSection() {
             >
              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl mb-6">
   <Image
-    src="/images/home-automation/smart-switch-comparison.png"
-    alt="SmartLiv vs Traditional"
-    fill
-    priority
-    className="object-cover transition-transform duration-700 hover:scale-105"
-    sizes="(max-width:768px)100vw,(max-width:1200px)50vw,40vw"
-  />
+  src="/images/home-automation/smart-switch-comparison.webp"
+  alt="SmartLiv Smart Touch Switch compared with a traditional switchboard"
+  fill
+  quality={70}
+  loading="lazy"
+  className="object-cover transition-transform duration-700 hover:scale-105"
+  sizes="(max-width:768px)100vw,(max-width:1200px)50vw,40vw"
+/>
 
   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
 </div>
@@ -53,11 +57,11 @@ export default function ComparisonSection() {
                 </p>
                 <div className="mt-4 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-brand-green/20 flex items-center justify-center">
-                    <span className="text-brand-green text-xs font-medium">RV</span>
+                    <span className="text-brand-green text-xs font-medium">CR</span>
                   </div>
                   <div>
-                    <div className="text-white/70 text-xs">Ravi Varma</div>
-                    <div className="text-white/30 text-xs">Villa Owner, Jubilee Hills</div>
+                    <div className="text-white/70 text-xs">Chukkapalli Ramesh</div>
+                    <div className="text-white/30 text-xs">Villa Owner, Guntur</div>
                   </div>
                 </div>
               </div>
@@ -68,7 +72,7 @@ export default function ComparisonSection() {
           <div className="order-1 lg:order-2">
             <Reveal>
               <p className="text-brand-green text-sm tracking-widest uppercase font-light mb-4">
-                Why SmartLiv
+             WHY CHOOSE SMARTLIV SMART TOUCH SWITCHES
               </p>
             </Reveal>
             <Reveal delay={0.1}>
@@ -80,8 +84,7 @@ export default function ComparisonSection() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-white/40 text-base font-light leading-relaxed mb-10">
-                The gap between a standard switchboard and a SmartLiv panel isn't just 
-                aesthetic — it's an entirely different relationship with your home.
+               SmartLiv Smart Touch Switches offer far more than a modern appearance. Enjoy app control, voice assistants, scene automation, remote access, enhanced safety, and premium glass panels—all designed to deliver a smarter and more convenient home than traditional switchboards.
               </p>
             </Reveal>
 

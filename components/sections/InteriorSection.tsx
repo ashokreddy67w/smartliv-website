@@ -16,6 +16,7 @@ export default function InteriorSection() {
     <section id="design" className="bg-[#050505] py-32 md:py-40">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-16">
         <div className="grid items-center gap-20 lg:grid-cols-2 lg:gap-24">
+          
           {/* Images */}
           <div className="relative">
             <motion.div
@@ -29,7 +30,7 @@ export default function InteriorSection() {
               className="relative h-[520px] md:h-[650px] w-full overflow-hidden rounded-[32px]"
             >
               <Image
-                src="/images/interior/living-room.png"
+                src="/images/interior/living-room.webp"
                 alt="Luxury Modern Living Room"
                 fill
                 priority
@@ -47,7 +48,7 @@ export default function InteriorSection() {
               className="absolute -bottom-8 -right-6 h-40 w-40 overflow-hidden rounded-2xl border border-white/10 shadow-2xl md:h-52 md:w-52"
             >
               <Image
-                src="/images/interior/switch-closeup.png"
+                src="/images/interior/switch-closeup.webp"
                 alt="SmartLiv Switch Closeup"
                 fill
                 sizes="220px"
@@ -60,33 +61,28 @@ export default function InteriorSection() {
           <div>
             <Reveal>
               <p className="mb-6 text-sm font-light uppercase tracking-[0.35em] text-brand-green">
-                Designed for Your Interior
+               LUXURY SMART HOME DESIGN
               </p>
             </Reveal>
 
             <Reveal delay={0.1}>
               <h2 className="mb-8 text-headline font-thin leading-tight text-white">
-                Crafted to Complement{" "}
+             Premium Smart Home Design{" "}
                 <span className="text-white/35">
-                  Your Interior
+                That Complements Every Interior
                 </span>
               </h2>
             </Reveal>
 
             <Reveal delay={0.2}>
               <p className="mb-6 text-lg font-light leading-8 text-white/60">
-                Interior designers specify SmartLiv because it never compromises
-                their vision. Its ultra-slim profile—just 8.2mm proud of the
-                wall—blends effortlessly into any aesthetic, from exposed
-                concrete to premium marble finishes.
+               SmartLiv premium smart touch switches are designed to complement luxury homes, modern apartments, villas, offices, and commercial interiors. With an ultra-slim profile, premium glass finish, and minimalist design, every switch blends naturally into contemporary living spaces while delivering advanced smart home automation.
               </p>
             </Reveal>
 
             <Reveal delay={0.3}>
               <p className="mb-12 text-base font-light leading-8 text-white/40">
-                Whether your home embraces modern minimalism, timeless elegance,
-                or contemporary luxury, SmartLiv switches remain beautifully
-                understated until the moment you need them.
+               Whether you're building a new home or upgrading an existing one, SmartLiv combines elegant design with intelligent automation. Every switch is engineered to match premium interiors while providing seamless control of lighting, fans, curtains, appliances, and smart scenes.
               </p>
             </Reveal>
 

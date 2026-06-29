@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "SmartLiv",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/og-image.webp",
         width: 1200,
         height: 630,
         alt: "SmartLiv Premium Smart Home Automation",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "SmartLiv — Premium Smart Home Automation",
     description:
       "Luxury smart switches and home automation systems designed for modern homes.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/og-image.webp"],
     creator: "@smartliv",
   },
   robots: {
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
+  icon: "/icon.png",
+  apple: "/icon.png",
+},
   manifest: "/site.webmanifest",
 };
 

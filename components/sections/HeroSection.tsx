@@ -30,7 +30,7 @@ export default function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source
-          src="/video/hersection/hero.mp4"
+         src="/video/hersection/hero-compressed.mp4"
           type="video/mp4"
         />
       </video>
@@ -67,7 +67,7 @@ export default function HeroSection() {
         >
           <span className="w-2 h-2 rounded-full bg-[#5EA43A]" />
           <span className="text-[#5EA43A] uppercase tracking-[0.25em] text-xs">
-            SmartLiv Luxury Automation
+  PREMIUM SMART HOME AUTOMATION
           </span>
         </motion.div>
 
@@ -77,10 +77,12 @@ export default function HeroSection() {
           transition={{ duration: 1 }}
           className="text-6xl md:text-8xl font-extralight text-white leading-none tracking-tight"
         >
-          Your Home.
+     Every Touch.
+Perfectly Intelligent.
           <br />
-          <span className="text-[#5EA43A] font-semibold">
-            Reimagined.
+          <span className="text-[#5EA43A] font-semibold">         
+Smart Home Automation
+Designed Around You.
           </span>
         </motion.h1>
 
@@ -90,10 +92,8 @@ export default function HeroSection() {
           transition={{ delay: 0.3 }}
           className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-white/70 leading-relaxed"
         >
-          Experience premium smart home automation with elegant touch
-          switches, intelligent lighting, voice control, security, climate,
-          entertainment and seamless mobile access.
-        </motion.p>
+Control lighting, security, curtains, climate and entertainment
+from one beautifully designed smart home platform.        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -112,7 +112,7 @@ export default function HeroSection() {
             href="#products"
             className="px-8 py-4 rounded-full border border-white/20 text-white hover:bg-white/10 transition"
           >
-            Explore Products
+           Experience SmartLiv
           </a>
         </motion.div>
 

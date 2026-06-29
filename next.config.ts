@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    domains: [],
-  },
+images: {
+  qualities: [70, 75, 85, 90],
+}
 };
 
 export default nextConfig;
