@@ -38,7 +38,8 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
   const relatedProducts = getRelatedProducts(product.id, 4);
 
   // Safe gallery fallback
-  const gallery = product.gallery ?? [product.image];
+ const gallery =
+  (product as Product & { gallery?: string[] }).gallery ?? [product.image];
 
   // Get colour-specific image
   const getColourImage = (colour: string) => {
